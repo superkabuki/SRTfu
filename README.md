@@ -41,6 +41,7 @@ ___
    * the libsrt in the SRTfu directory will only be used by SRTfu.
    * Eliminates versioning issues and having to set LD_LIBRARY_PATH.
    * __Tested and Working on OpenBSD and Debian Sid__. Should work on most UNIX / Linux.
+   * __SRTfu is not made for Windows, you will have to build your own libsrt__
 
 ### Install SRTfu
 ```sh
