@@ -316,7 +316,7 @@ class SRTfu(builtins.object)
  |  
  |  congestion_control(self, algo)
  |      congestion_control set the congestion control
- |      algorithm. can also be set with livecc() and filecc()
+ |      algorithm. can also be set with conlive() and confile()
  |      methods.
  |  
  |  conlive(self)
