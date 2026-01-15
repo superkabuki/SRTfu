@@ -8,15 +8,19 @@
 
 ___
 
-### NEWS
-* 12/20/2025 : __v0.0.11__ aka '_super star_ __released__.
-    * Minor tuning, but worth it. 
-* 12/19/2025 : __v0.0.9__ aka '_global domination and stuff_' __released__
-   * `New` __auto installer__ for __libsrt shared lib__. It`s kind of cool 
-   * `Fixed` packet loss in __SRTfu.read()__ method
-   * `Fixed` packet loss in __packetizer__ function
-   * `Added` __SRTSockOpt__ enum
-   * `Switched` from setuptools to build module  for sdist and wheel generation.
+## Terms and Conditions
+
+* You be cool, and I'll be cool.
+
+* Questions? Ask them.
+
+* Features? tell me.
+
+* Comments? make them.
+
+* Got Code? Do a pull request.
+
+___
 
 # Docs
 
