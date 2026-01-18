@@ -45,14 +45,14 @@ def datagramer(srt_url, flags=None):
         buffer = srtf.mkbuff(BUFFSIZE)
         st = srtf.recv(buffer)
         datagram = buffer.raw
-        yield datagram
+        yield datagra
 
 
 def has_sync_byte(stuff):
     """
     has_sync_byte check stuff for sync_byte
     """
-    return stuff[0:1] == SYNC_BYTE
+    return SYNC_BYTE in stuff
 
 
 def at_least_a_packet(stuff):
@@ -60,6 +60,24 @@ def at_least_a_packet(stuff):
     at_least_a_packet  check if stuff  is at least PKTSZ
     """
     return len(stuff) >= PKTSZ
+
+
+def slice_off_packet(bigfatbuff):
+    """
+    Parameters
+    ----------
+    bigfatbuff : 
+        data read from srt mpegts stream
+    
+    Returns
+    -------
+    packet:
+        188 bytes of mpegts data
+    """
+    bigfatbuff = bigfatbuff[bigfatbuff.index(SYNC_BYTE) :]
+    packet= bigfatbuff[:PKTSZ]
+    bigfatbuff=bigfatbuff[PKTSZ:]
+    return packet
 
 
 def packetizer(srt_url, flags=None):
@@ -71,12 +89,8 @@ def packetizer(srt_url, flags=None):
     bigfatbuff = b""
     for datagram in datagramer(srt_url, flags):
         bigfatbuff += datagram
-        while SYNC_BYTE in bigfatbuff:
-            bigfatbuff = bigfatbuff[bigfatbuff.index(SYNC_BYTE) :]
-            packet= bigfatbuff[:PKTSZ]
-            bigfatbuff=bigfatbuff[PKTSZ:]
-            yield packet
-
+        while has_sync_byte(bigfatbuff):
+            yield slice_off_packet(bigfatbuff)
 
 
 def fetch(srt_url, remote_file, local_file, flags=None):
