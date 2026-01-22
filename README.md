@@ -86,7 +86,7 @@ Use the __datagramer__ function to receive a live srt stream.
 datagramer(srt_url,flags=None)
 
 ```
-* datagramer takes an srt_url as an arg and returns a generator of raw datagram payloads.
+* datagramer takes an srt_url as an arg and returns a generator of datagrams.
 
 * Complete working example
 
