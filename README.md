@@ -11,13 +11,9 @@ ___
 ## Terms and Conditions
 
 * You be cool, and I'll be cool.
-
 * Questions? Ask them.
-
 * Features? tell me.
-
 * Comments? make them.
-
 * Got Code? Do a pull request.
 
 ___
