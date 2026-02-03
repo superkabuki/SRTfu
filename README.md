@@ -40,10 +40,18 @@ ___
 
 # Install 
 ##### Install libsrt
-* __Requires clang or gcc, cmake, git,gmake or make, and openssl__
+* __Requires__
+   * clang or gcc,
+   * cmake,
+   * git,
+   * gmake or make,
+   * openssl
+    
 * __The first time you use SRTfu libsrt will be built and installed automatically into the SRTfu site-packages directory__.
+* This is the cleanest way I can think to do it, and it really makes sense if you think about it.
    * the libsrt in the SRTfu directory will only be used by SRTfu.
-   * Eliminates versioning issues and having to set LD_LIBRARY_PATH.
+   * Eliminates versioning issues.
+   * No need to set LD_LIBRARY_PATH.
    * __Tested and Working on OpenBSD and Debian Sid__. Should work on most UNIX / Linux.
    * __SRTfu is not made for Windows, you will have to build your own libsrt__
 
@@ -52,8 +60,6 @@ ___
 python3 -mpip install srtfu --break-system-packages
 ```
 ___
-
-
 
 # Usage
 #### srtfu handles the ctype conversion and pointers. 
@@ -177,10 +183,11 @@ ___
 # low level
 * Most of libsrt is available in SRTfu, the ctypes conversions are handled for you.
 * If you've used sockets, this will all seem very similar.
-* One note, the socket is an optional arg in methods, it only needs to be used when a server accepts a socket connection. 
 * init SRTfu instance, just provide a srt_url
 * a socket is created for you, but not connected.
-* the srt_url sets host and port to bind for servers (0.0.0.0 works), and host and port to connect for clients
+* the srt_url sets host and port to bind for servers (0.0.0.0 works), and host and port to connect for clients.
+* One note, the socket is an optional arg in methods, it only needs to be used when a connection is accepted and that is the target socket.
+
 ___
 ### init SRTfu instance
 
