@@ -429,6 +429,7 @@ class SRTfu(builtins.object)
 
 
 # Socket Flags 
+* SRT is really big on socket flags, and there are a lot of them, the required flags are already set by SRTfu. 
 * Note: these are the flag number for the socket, not the value of the flag.
 ```py3
 SRTO_MSS = 0  # the Maximum Transfer Unit
