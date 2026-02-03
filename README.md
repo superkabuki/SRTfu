@@ -29,7 +29,7 @@ ___
   * [smoketest](#smoketest) - the smoketest from libsrt in srtfu.
   * [SCTE35](#scte35) - parse scte35 from srt
   * [low level](#low-level) - using the SRTfu class.
-  * [SRTfu](#srtfu) -all the SRTfu methods
+  * [SRTfu](#srtfu-1) -all the SRTfu methods
   * [socket flags](#socket-flags) - SRT uses a lot of socket flags.
     
 ___
