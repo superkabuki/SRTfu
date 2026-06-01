@@ -43,19 +43,15 @@ python3 -mpip install srtfu --break-system-packages
 
 ##### Install libsrt
 * After you install SRTfu, you need to build libsrt.
-* Don't worry, this will be easy.
+* Don't worry, __this will be easy__.
 * __Requires__
    * clang or gcc,
    * cmake,
    * git,
-   * gmake or make,
+   * make,
    * openssl
-    
-* __The first time you use SRTfu libsrt will be built and installed automatically into the SRTfu site-packages directory__.
-* This is the cleanest way I can think to do it, and it really makes sense if you think about it.
-   * the libsrt in the SRTfu directory will only be used by SRTfu.
-   * Eliminates versioning issues.
-   * No need to set LD_LIBRARY_PATH.
+       
+* The first time you use SRTfu __libsrt will be built and installed automatically__.
 
 ___
 
