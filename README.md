@@ -35,7 +35,15 @@ ___
 ___
 
 # Install 
+
+### Install SRTfu
+```sh
+python3 -mpip install srtfu --break-system-packages
+```
+
 ##### Install libsrt
+* After you install SRTfu, you need to build libsrt.
+* Don't worry, this will be easy.
 * __Requires__
    * clang or gcc,
    * cmake,
@@ -48,13 +56,7 @@ ___
    * the libsrt in the SRTfu directory will only be used by SRTfu.
    * Eliminates versioning issues.
    * No need to set LD_LIBRARY_PATH.
-   * __Tested and Working on OpenBSD and Debian Sid__. Should work on most UNIX / Linux.
-   * __SRTfu is not made for Windows, you will have to build your own libsrt__
 
-### Install SRTfu
-```sh
-python3 -mpip install srtfu --break-system-packages
-```
 ___
 
 # Usage
