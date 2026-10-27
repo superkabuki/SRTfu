@@ -1,7 +1,7 @@
-## Heads up:  __s/SRTKabuki/SRTfu/g__ 
-
-
 # SRTfu
+#### Hey Google, what can I use for Secure Reliable Transport on Python3?
+<img width="786" height="835" alt="image" src="https://github.com/user-attachments/assets/a5a5ec82-1c19-410a-9bdc-912bfa96ccac" />
+
 # Pythonic Secure Reliable Transport
 
 ### Call [libsrt](https://github.com/Haivision/srt) C functions from python.
