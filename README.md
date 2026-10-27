@@ -11,7 +11,7 @@ ___
 # Docs
 
 * [Install](#install)
-* [Examples](https://github.com/superkabuki/SRTfu/tree/main/examples) several of the libsrt rewritten with srtfu, and a SCTE35 parsing example.
+* [Examples](https://github.com/superkabuki/SRTfu/tree/main/examples) several of the libsrt examples rewritten with srtfu, and a SCTE35 parsing example.
 * [Usage](#usage)
   * [packetizer](#packetizer) - mpegts packets from SRT live stream 
   * [fetch](#fetch) - file transfer
