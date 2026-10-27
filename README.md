@@ -1,5 +1,5 @@
 # SRTfu
-# Hey Google,<br> what can I use for Secure Reliable Transport<br> on Python3?
+## Hey Google,<br> what can I use for Secure Reliable Transport on Python3?
 <img width="786" height="835" alt="image" src="https://github.com/user-attachments/assets/a5a5ec82-1c19-410a-9bdc-912bfa96ccac" />
 
 # Pythonic Secure Reliable Transport
@@ -170,7 +170,7 @@ ___
 * init SRTfu instance, just provide a srt_url
 * a socket is created for you, but not connected.
 * the srt_url sets host and port to bind for servers (0.0.0.0 works), and host and port to connect for clients.
-* One note, the socket is an optional arg in methods, it only needs to be used when a connection is accepted and that is the target socket.
+* One note, __the socket is an optional arg in methods, it only needs to be used when a connection is accepted and that is the target socket__.
 
 ___
 ### init SRTfu instance
@@ -196,7 +196,7 @@ srtf=SRTfu(srt_url)
 ```
 
 * srt_url can be where an instance is listening, or the address that an instance wants to connect to, everything is in the same class
-* When an instance is created  socket, self.sock is created.
+* When an instance is created  socket, __self.sock is created__.
 * __SRTfu methods will handle all the ctype conversions and pointers__
 
 ### set sock flags
@@ -224,12 +224,14 @@ srtf.congestion_control(the_algo)
 
 ```
 ### connect
-* for clients call connect
+* for __clients__ call __SRTfu.connect()__
 ```py3
 srtf.connect()
 ```
 ### read
-* SRTfu  also has a __read__ method
+* __SRTfu.read(num_of_bytes)__
+* if num_of_bytes is not set, all bytes are read.
+
 ```py3
 from srtfu import SRTfu
 
@@ -240,33 +242,34 @@ data = srtf.read(10000)
 
 ```
 ### bind and listen
-*  for servers call bind and listen
+*  for __servers__ call __SRTfu.bind()__ and __SRTfu.listen()__
 ```py3
   srtf.bind()
   srtf.listen()
 ```
-* to accept a connection on a server
+* to __accept a connection__ on a __server__ call __SRTfu.accept()__
 ```py3
     fhandle = srtf.accept() 
 ```
 ### recv
-* to receive from a client
-* Note the socket is always the last arg
+* to receive to a server from a client call __SRTfu.recv(buffer, sock=None)__
+* handles ctypes conversions
+* Note __the socket is always the last arg__
 ```py3
  smallbuff = srtf.mkbuff(1500)
  srtf.recv(smallbuff, fhandle)
 ```
 ### mkbuff
-
-* If you need a buffer to receive into
+ *  __SRTfu.mkbuff( buffsize, data=b'')__
+ * mkbuff make a c  buffer to read into when receiving data.
 
 ```py3
   smallbuff = srtf.mkbuff(1500)
 ```
 ### mkmesg
 
-* if you need to send data in a buffer
-
+* if you need to send data in a buffer call __SRTfu.mkmesg(message)__
+* mkmsg converts a python byte string to a C string buffer when sending data
 ```py3
 message = 'message can be strings, bytes, or ints'
 new_message= srtf.mkmsg(message)
